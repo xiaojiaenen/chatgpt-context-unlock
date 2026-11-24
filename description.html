@@ -1,0 +1,33 @@
+<div style="background-color:#1e1e1e;border:1px solid #3a3a3a;color:#ececec">
+
+<h2 style="color:#8ab4f8;border-bottom:2px solid #3a3a3a">ChatGPT 上下文已满续聊</h2>
+
+<blockquote style="background-color:#2a2a2a;border:1px solid #3a3a3a">
+<p><strong style="color:#81c995">解决什么</strong>　免费版 ChatGPT 聊长了会弹「上下文窗口已达上限」，输入框还能打字，但发送按钮发不出去。这个脚本让你接着当前对话聊，不用开新窗。</p>
+</blockquote>
+
+<h3 style="color:#8ab4f8">怎么用</h3>
+
+<ol>
+  <li>正常聊天。弹出「上下文窗口已达上限」时，右下角会浮出三样东西：<strong style="color:#81c995">新聊天</strong>、<strong style="color:#81c995">提交答案</strong>、一行状态。碍事的提示条和「ChatGPT 可能会出错」会一起消失。</li>
+  <li>在底部输入框写你想说的话。</li>
+  <li>点输入框右边的发送按钮，或按回车。内容不会真发出去，脚本先存起来，输入框清空。</li>
+  <li>点右下角的「提交答案」。脚本把存的内容塞进 GenUI 请求发出去，回复接着来。</li>
+</ol>
+
+<blockquote style="background-color:#2a2a2a;border:1px solid #f0b429">
+<p style="color:#f0b429">只在上下文满的时候接管发送按钮，正常对话不受影响。右下角的「提交答案」是页面上原本的按钮，只是挪了个位置，得亲手点——模拟点击 React 不认，试过。「新聊天」也是官方那个，点了带摘要开新对话。</p>
+</blockquote>
+
+<h3 style="color:#8ab4f8">装了没反应</h3>
+
+<p>先看右下角有没有浮出那三样。有的话说明认出了「上下文已满」。没有的话，多半是页面版本换了提示文案。按 F12 开控制台，找 <code style="color:#81c995">[续聊]</code> 开头的日志贴评论区，我看看怎么改。</p>
+
+<hr style="border:1px solid #3a3a3a">
+
+<details open>
+  <summary style="color:#8ab4f8">兼容性与隐私</summary>
+  <p>脚本改了 fetch 和 XMLHttpRequest，要是装了别的也改这俩的脚本可能冲突。聊天记录和账号都不碰，只在点发送和点提交那一下改请求内容。</p>
+</details>
+
+</div>
